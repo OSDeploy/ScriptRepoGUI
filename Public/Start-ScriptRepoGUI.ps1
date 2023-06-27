@@ -3,7 +3,7 @@ function Start-ScriptRepoGUI {
     param (
         [Parameter(Mandatory = $false)]
         [ValidateScript({Test-Path -Path $_ -PathType Container})]
-        [string]$Path = "$($MyInvocation.MyCommand.Module.ModuleBase)\Projects\ScriptRepoGUI\Scripts"
+        [string]$Path = "$env:Temp\ScriptRepo\ScriptRepo-main"
     )
     #================================================
     #   Set Global Variables

@@ -4,7 +4,7 @@
 
 @{
     RootModule              = 'ScriptRepoGUI.psm1'
-    ModuleVersion           = '23.6.26.1'
+    ModuleVersion           = '23.6.27.1'
     CompatiblePSEditions    = 'Desktop'
     GUID                    = '03cd2552-5aa6-422b-ad0d-f304a2b1f281'
     Author                  = 'David Segura'
