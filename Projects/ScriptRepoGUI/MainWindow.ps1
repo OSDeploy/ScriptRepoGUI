@@ -374,7 +374,7 @@ $formMainWindowControlStartButton.add_Click({
 #   Customizations
 #================================================
 [string]$ModuleVersion = Get-Module -Name ScriptRepoGUI | Sort-Object -Property Version | Select-Object -ExpandProperty Version -Last 1
-$formMainWindow.Title = "ScriptRepoGUI Beta $ModuleVersion"
+$formMainWindow.Title = "ScriptRepoGUI $ModuleVersion"
 #================================================
 #   Hide Windows
 #================================================

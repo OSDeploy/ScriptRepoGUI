@@ -267,7 +267,7 @@
 <!-- Row 8 -->
             <Label Grid.Row="8"
                Name="BrandingTitleControl"
-               Content="ScriptRepoGUI Beta"
+               Content="ScriptRepoGUI"
                FlowDirection="RightToLeft"
                FontSize="22"
                FontWeight="Bold"
