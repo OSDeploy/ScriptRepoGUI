@@ -16,7 +16,8 @@ function Start-ScriptRepoGUI {
     #   Parameters
     #=================================================
     $ScriptFiles = Get-ChildItem -Path $Path -Recurse -File
-    $ScriptFiles = $ScriptFiles | Where-Object {($_.Name -match '.ps1') -or ($_.Name -match '.md') -or ($_.Name -match '.json')}
+    $ScriptFiles = $ScriptFiles | Where-Object {$_.Name -notlike '.git*'}
+    #$ScriptFiles = $ScriptFiles | Where-Object {($_.Name -match '.ps1') -or ($_.Name -match '.md') -or ($_.Name -match '.json')}
     #=================================================
     #   Create Object
     #=================================================
