@@ -3,7 +3,7 @@
 [CmdletBinding()]
 param()
 $ScriptName = 'scriptrepo.osdcloud.com'
-$ScriptVersion = '23.6.27.1'
+$ScriptVersion = '23.7.8.1'
 
 # ScriptRepo
 $FileName = 'ScriptRepo.zip'
