@@ -337,8 +337,8 @@ $formMainWindowControlStartButton.add_Click({
 
     Write-Host -ForegroundColor Cyan "Start-Process"
     $Global:OSDScriptBlock = [scriptblock]::Create($formMainWindowControlScriptContent.Text)
-    write-host $Global:DevOSDscript
-    if ($Global:DevOSDscript = $true) {
+    write-host $Global:DevOSD
+    if ($Global:DevOSD = $true) {
     
     # for AST reference in https://doitpsway.com/powershell-ast-your-friend-when-it-comes-to-powershell-code-analysis-and-extraction
  
