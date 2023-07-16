@@ -338,6 +338,25 @@ $formMainWindowControlStartButton.add_Click({
     Write-Host -ForegroundColor Cyan "Start-Process"
     $Global:OSDScriptBlock = [scriptblock]::Create($formMainWindowControlScriptContent.Text)
 
+    if ($global:DevOSDscript = $true) {
+    
+    # for AST reference in https://doitpsway.com/powershell-ast-your-friend-when-it-comes-to-powershell-code-analysis-and-extraction
+ 
+    $ScriptFile = 'OSDScript.ps1'
+    $ScriptPath = "$env:Temp\$ScriptFile"
+    
+    Write-Host -ForegroundColor DarkGray "Saving contents of `$Global:OSDScriptBlock` to $ScriptPath"
+    $Global:OSDScriptBlock | Out-File $ScriptPath -Encoding utf8 -Width 2000 -Force
+    
+    $Global:OSDScriptBlock = [scriptblock]::Create((Get-Content $ScriptPath -Raw))
+
+    $Global:OSDScriptBlock.Ast.findAll({$args[0] -is [System.Management.Automation.Language.ParamBlockAst]},$false) 
+    
+    $Global:OSDScriptBlock.Ast.ParamBlock.Parameters | ForEach-Object {
+        Write-Host -ForegroundColor DarkGray "Parameter: $($_.Name)"
+
+       }
+    }
     if ($Global:OSDScriptBlock) {
         <#
         Review these lines
